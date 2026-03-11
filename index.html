@@ -290,20 +290,29 @@
 
     .world-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
     }
 
     .world-card {
-      background: var(--card-bg);
       border-radius: 0.75rem;
-      padding: 1rem;
-      border: 1px dashed var(--border);
-      color: var(--muted);
-      font-size: 0.84rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0a0a0a;
+      aspect-ratio: 4/3;
     }
 
-    .world-card strong { color: #e9e9f5; }
+    .world-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .world-card:hover img {
+      transform: scale(1.03);
+    }
 
     .about-text {
       color: var(--muted);
@@ -470,32 +479,13 @@ It will take everything she has to protect her family, her friends, and find som
 
   <!-- WORLD / ART -->
   <section id="world">
-    <h2>The World</h2>
-    <p class="section-sub">
-      A few panels from the same universe: caves, alleys, fire, and the people caught between.
-    </p>
-
+    <h2>The World of The Northern Star</h2>
     <div class="world-grid">
-      <div class="world-card">
-        <img src="world-1.jpg" alt="An older woman in a cave watching a wooden door and a small shrine" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>A quiet room, a door barred against the world, and someone praying it holds.</div>
-      </div>
-      <div class="world-card">
-        <img src="world-2.jpg" alt="A figure kneeling in a burning street surrounded by wreckage" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>Fire in the street, wreckage all around, one person left in the middle of it.</div>
-      </div>
-      <div class="world-card">
-        <img src="world-3.jpg" alt="A wounded figure being wrapped in bandages by older men" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>Improvised medicine and old hands trying to keep someone alive a little longer.</div>
-      </div>
-      <div class="world-card">
-        <img src="world-4.jpg" alt="A man carrying a child through filthy water toward a ruined doorway" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>Flooded streets, ruined buildings, and a family trying to get back inside.</div>
-      </div>
-      <div class="world-card">
-        <img src="world-5.jpg" alt="A lone figure walking through a ruined urban landscape" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>War isn't just the front line; it's what the city looks like after.</div>
-      </div>
+      <div class="world-card"><img src="world-1.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card"><img src="world-2.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card"><img src="world-3.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card"><img src="world-4.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card"><img src="world-5.jpg" alt="Northern Star artwork" /></div>
     </div>
   </section>
 
