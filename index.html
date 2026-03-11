@@ -114,78 +114,61 @@
       max-width: 640px;
     }
 
-    /* BOOKS VERTICAL */
+    /* BOOK CARDS */
 
-    .book-row {
-      display: flex;
-      gap: 1.4rem;
-      align-items: flex-start;
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
       margin-bottom: 2rem;
     }
 
+    .book-card-main {
+      display: flex;
+      align-items: stretch;
+    }
+
     .book-cover {
-      flex: 0 0 140px;
-      max-width: 140px;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      background: #1a1d2a;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+      flex: 0 0 220px;
+      width: 220px;
     }
 
     .book-cover img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .book-body {
+    .book-poem {
       flex: 1;
-      background: var(--card-bg);
-      border-radius: 0.8rem;
-      padding: 1.2rem 1.3rem;
-      border: 1px solid var(--border);
-    }
-
-    .book-label {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .book-title {
-      font-size: 1.18rem;
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-    }
-
-    .book-meta {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 0.65rem;
-    }
-
-    .book-copy {
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .pill-list {
+      padding: 2rem 2rem 1.8rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-bottom: 0.8rem;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--border);
     }
 
-    .pill {
-      font-size: 0.76rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(15, 18, 30, 0.9);
+    .book-poem-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .book-poem-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--fg);
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .book-card-footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.5rem;
     }
 
     .btn-row {
@@ -218,12 +201,21 @@
       font-size: 0.8rem;
     }
 
-    @media (max-width: 720px) {
-      .book-row {
+    @media (max-width: 640px) {
+      .book-card-main {
         flex-direction: column;
       }
       .book-cover {
-        max-width: 200px;
+        width: 100%;
+        max-height: 320px;
+      }
+      .book-cover img {
+        height: 320px;
+        object-position: top;
+      }
+      .book-poem {
+        border-left: none;
+        border-top: 1px solid var(--border);
       }
     }
 
@@ -345,7 +337,7 @@
       <img src="hero-fire.jpg" alt="A figure engulfed in flames amid wreckage" />
     </div>
 
-    <!-- REVIEWS — right under the hero -->
+    <!-- REVIEWS - right under the hero -->
     <div class="review-box" style="margin-top:1.6rem;">
       <div id="review-text" class="review-text"></div>
       <div id="review-source" class="review-source"></div>
@@ -366,18 +358,17 @@
   <!-- BOOKS -->
   <section id="books">
     <h2>The Northern Star Trilogy</h2>
-    <p class="section-sub">Military sci‑fi. Three books. One saga.</p>
+    <p class="section-sub">Military sci-fi. Three books. One saga.</p>
 
-    <!-- Beginning -->
-    <div class="book-row">
-      <div class="book-cover">
-        <img src="northern-star-beginning.jpg" alt="The Northern Star: The Beginning cover" />
-      </div>
-      <div class="book-body">
-        <div class="book-label">Military Sci‑Fi • Book One</div>
-        <div class="book-meta">The Northern Star: The Beginning (Book 1)</div>
-        <p class="book-copy" style="white-space:pre-line;">
-The oil is gone.
+    <!-- Book 1 -->
+    <div class="book-card">
+      <div class="book-card-main">
+        <div class="book-cover">
+          <img src="northern-star-beginning.jpg" alt="The Northern Star: The Beginning cover" />
+        </div>
+        <div class="book-poem">
+          <div class="book-poem-label">Book One</div>
+          <p class="book-poem-text">The oil is gone.
 That way of life, ended.
 An invention frees the mind.
 A cyber-world becomes salvation.
@@ -386,65 +377,51 @@ A soldier, a titan.
 While nations thrash into antiquity,
 And a CEO becomes Queen,
 A man, brilliant and cunning,
-Plots to rule it all.
-        </p>
-        <div class="pill-list">
-          <span class="pill">Military sci‑fi</span>
-          <span class="pill">Near‑future</span>
-          <span class="pill">Book 1 of 3</span>
+Plots to rule it all.</p>
         </div>
+      </div>
+      <div class="book-card-footer">
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">
-            Read Book One<span>›</span>
-          </a>
-          <a class="btn" href="#" target="_blank" rel="noopener">
-            Get the full omnibus<span>›</span>
-          </a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Read Book One ›</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Get the full omnibus ›</a>
         </div>
       </div>
     </div>
 
-    <!-- Civil War -->
-    <div class="book-row">
-      <div class="book-cover">
-        <img src="northern-star-civil-war.jpg" alt="The Northern Star: Civil War cover" />
-      </div>
-      <div class="book-body">
-        <div class="book-label">Military Sci‑Fi • Book Two</div>
-        <div class="book-meta">The Northern Star: Civil War (Book 2)</div>
-        <p class="book-copy" style="white-space:pre-line;">
-The giant is ill.
+    <!-- Book 2 -->
+    <div class="book-card">
+      <div class="book-card-main">
+        <div class="book-cover">
+          <img src="northern-star-civil-war.jpg" alt="The Northern Star: Civil War cover" />
+        </div>
+        <div class="book-poem">
+          <div class="book-poem-label">Book Two</div>
+          <p class="book-poem-text">The giant is ill.
 His daughter in peril.
 Her bastion a psycho.
 The worlds torn asunder.
 War is fueled by want,
 subversion by greed.
 What value is Free Will,
-if you can be reborn as a god?
-        </p>
-        <div class="pill-list">
-          <span class="pill">Escalating conflict</span>
-          <span class="pill">Global stakes</span>
-          <span class="pill">Book 2 of 3</span>
+if you can be reborn as a god?</p>
         </div>
+      </div>
+      <div class="book-card-footer">
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">
-            Read Book Two<span>›</span>
-          </a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Read Book Two ›</a>
         </div>
       </div>
     </div>
 
-    <!-- The End -->
-    <div class="book-row">
-      <div class="book-cover">
-        <img src="northern-star-the-end.jpg" alt="The Northern Star: The End cover" />
-      </div>
-      <div class="book-body">
-        <div class="book-label">Military Sci‑Fi • Book Three</div>
-        <div class="book-meta">The Northern Star: The End (Book 3)</div>
-        <p class="book-copy" style="white-space:pre-line;">
-The ancient giant hopes to die.
+    <!-- Book 3 -->
+    <div class="book-card">
+      <div class="book-card-main">
+        <div class="book-cover">
+          <img src="northern-star-the-end.jpg" alt="The Northern Star: The End cover" />
+        </div>
+        <div class="book-poem">
+          <div class="book-poem-label">Book Three</div>
+          <p class="book-poem-text">The ancient giant hopes to die.
 His existence festers like a plague.
 The love he's lost,
 and the debts he's paid.
@@ -453,17 +430,12 @@ and the waste he's laid.
 But one last chance to right one wrong.
 One last march into the fray.
 Together, they can kill the god.
-And set his daughter free.
-        </p>
-        <div class="pill-list">
-          <span class="pill">Trilogy finale</span>
-          <span class="pill">High cost</span>
-          <span class="pill">Book 3 of 3</span>
+And set his daughter free.</p>
         </div>
+      </div>
+      <div class="book-card-footer">
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">
-            Read Book Three<span>›</span>
-          </a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Read Book Three ›</a>
         </div>
       </div>
     </div>
@@ -473,31 +445,22 @@ And set his daughter free.
   <section id="the-seethe">
     <h2>The Seethe</h2>
     <p class="section-sub">A different world. A different story.</p>
-    <div class="book-row">
-      <div class="book-cover">
-        <img src="the-seethe.jpg" alt="The Seethe cover" />
-      </div>
-      <div class="book-body">
-        <div class="book-label">Sci‑Fi • Standalone</div>
-        <div class="book-title">The Seethe</div>
-        <div class="book-meta">Standalone novel</div>
-        <p class="book-copy">
-          In the vast forests of the Pacific Northwest, amidst the hard‑living community of loggers and miners,
-          Kacey Edwards strives to break the cycle of her family’s dreamless life. But when a mysterious event
-          causes mass death in the Pacific Ocean &mdash; and the following day wipes out cities &mdash; she learns
-          along with the rest of the world that what has happened is only the beginning. It will take all of her
-          intelligence and cunning to protect her family, her friends, and find some way &mdash; against all odds &mdash;
-          to survive.
-        </p>
-        <div class="pill-list">
-          <span class="pill">Science fiction</span>
-          <span class="pill">Near‑future</span>
-          <span class="pill">Character‑driven</span>
+    <div class="book-card">
+      <div class="book-card-main">
+        <div class="book-cover">
+          <img src="the-seethe.jpg" alt="The Seethe cover" />
         </div>
+        <div class="book-poem">
+          <p class="book-poem-text">In the vast forests of the Pacific Northwest, amidst the hard‑living community of loggers and miners, Kacey Edwards strives to break the cycle of her family's dreamless life.
+
+When a mysterious event causes mass death in the Pacific Ocean — and the following day wipes out cities — she learns that what has happened is only the beginning.
+
+It will take everything she has to protect her family, her friends, and find some way — against all odds — to survive.</p>
+        </div>
+      </div>
+      <div class="book-card-footer">
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">
-            Read The Seethe<span>›</span>
-          </a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Read The Seethe ›</a>
         </div>
       </div>
     </div>
@@ -531,7 +494,7 @@ And set his daughter free.
       </div>
       <div class="world-card">
         <img src="world-5.jpg" alt="A lone figure walking through a ruined urban landscape" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
-        <div>War isn’t just the front line; it’s what the city looks like after.</div>
+        <div>War isn't just the front line; it's what the city looks like after.</div>
       </div>
     </div>
   </section>
@@ -541,9 +504,9 @@ And set his daughter free.
     <h2>About the Author</h2>
     <p class="about-text">
       Mike Gullickson's debut novel, the cyberpunk bestseller <em>The Northern Star: The Beginning</em>,
-      was hailed by <em>Examiner</em> in 2013 as one of “The Top 5 Indie Published Books You Haven't Read But Should.”
-      For its sequel, <em>Midwest Book Review</em> stated “&hellip;it's military sci-fi and futuristic cyber-reality at its best.”
-      And in reviewing the final novel, <em>The New Podler Review of Books</em> stated that “the whole series is a science fiction masterpiece.”
+      was hailed by <em>Examiner</em> in 2013 as one of "The Top 5 Indie Published Books You Haven't Read But Should."
+      For its sequel, <em>Midwest Book Review</em> stated "&hellip;it's military sci-fi and futuristic cyber-reality at its best."
+      And in reviewing the final novel, <em>The New Podler Review of Books</em> stated that "the whole series is a science fiction masterpiece."
     </p>
     <p class="about-text">
       Mike has been interviewed as a bionics expert on <em>Lieberman Live!</em> (SiriusXM Howard 101) and featured on
@@ -571,16 +534,16 @@ And set his daughter free.
 
   const reviews = [
     {
-      text: '“I read the book in three days but kept putting writing a review aside because nothing I wrote seemed to do justice to Gullickson\'s story… the whole series is a science fiction masterpiece.”',
-      source: '— The New Podler Review of Books'
+      text: '"I read the book in three days but kept putting writing a review aside because nothing I wrote seemed to do justice to Gullickson\'s story… the whole series is a science fiction masterpiece."',
+      source: '- The New Podler Review of Books'
     },
     {
-      text: '“A truly disturbing book that also somehow manages to be hard to put down… with good characters, and so much suspense, both plot‑suspense and moral suspense, that it reveals itself as something far more cerebral than any giant‑fighting‑robots story generally ever is.”',
-      source: '— IndieReader'
+      text: '"A truly disturbing book that also somehow manages to be hard to put down… with good characters, and so much suspense, both plot-suspense and moral suspense, that it reveals itself as something far more cerebral than any giant-fighting-robots story generally ever is."',
+      source: '- IndieReader'
     },
     {
-      text: '“[The Northern Star: The End] is harsh, critical and doesn\'t pull any punches… a great way to end a fantastic trilogy.”',
-      source: '— Bartleby\'s Book Reviews'
+      text: '"[The Northern Star: The End] is harsh, critical and doesn\'t pull any punches… a great way to end a fantastic trilogy."',
+      source: '- Bartleby\'s Book Reviews'
     }
   ];
 
