@@ -218,22 +218,39 @@
 
     .review-box {
       background: var(--card-bg);
-      border-radius: 0.9rem;
-      padding: 1.4rem 1.5rem 1.1rem;
+      border-radius: 1rem;
+      padding: 2.2rem 2.4rem 1.6rem;
       border: 1px solid var(--border);
-      min-height: 150px;
       position: relative;
       overflow: hidden;
     }
 
+    .review-box::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.2rem;
+      left: 1.4rem;
+      font-size: 6rem;
+      color: var(--accent);
+      opacity: 0.25;
+      line-height: 1;
+      font-family: Georgia, serif;
+      pointer-events: none;
+    }
+
     .review-text {
-      font-size: 0.94rem;
-      margin-bottom: 0.7rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: var(--fg);
+      font-style: italic;
     }
 
     .review-source {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
     }
 
     .review-nav {
@@ -358,6 +375,8 @@
           <div class="dot" data-index="0"></div>
           <div class="dot" data-index="1"></div>
           <div class="dot" data-index="2"></div>
+          <div class="dot" data-index="3"></div>
+          <div class="dot" data-index="4"></div>
         </div>
       </div>
     </div>
@@ -543,15 +562,23 @@ It will take everything she has to protect her family, her friends, and find som
   const reviews = [
     {
       text: '"I read the book in three days but kept putting writing a review aside because nothing I wrote seemed to do justice to Gullickson\'s story… the whole series is a science fiction masterpiece."',
-      source: '- The New Podler Review of Books'
+      source: '— The New Podler Review of Books'
     },
     {
-      text: '"A truly disturbing book that also somehow manages to be hard to put down… with good characters, and so much suspense, both plot-suspense and moral suspense, that it reveals itself as something far more cerebral than any giant-fighting-robots story generally ever is."',
-      source: '- IndieReader'
+      text: '"A truly disturbing book that also somehow manages to be hard to put down… with good characters, and so much suspense, both plot‑suspense and moral suspense, that it reveals itself as something far more cerebral than any giant‑fighting‑robots story generally ever is."',
+      source: '— IndieReader'
     },
     {
       text: '"[The Northern Star: The End] is harsh, critical and doesn\'t pull any punches… a great way to end a fantastic trilogy."',
-      source: '- Bartleby\'s Book Reviews'
+      source: '— Bartleby\'s Book Reviews'
+    },
+    {
+      text: '"…it\'s military sci-fi and futuristic cyber-reality at its best."',
+      source: '— Midwest Book Review'
+    },
+    {
+      text: '"One of the Top 5 Indie Published Books You Haven\'t Read But Should."',
+      source: '— Examiner'
     }
   ];
 
