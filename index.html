@@ -314,6 +314,10 @@
       transform: scale(1.03);
     }
 
+    .world-hidden {
+      display: none;
+    }
+
     .about-text {
       color: var(--muted);
       font-size: 0.9rem;
@@ -480,7 +484,7 @@ It will take everything she has to protect her family, her friends, and find som
   <!-- WORLD / ART -->
   <section id="world">
     <h2>The World of The Northern Star</h2>
-    <div class="world-grid">
+    <div class="world-grid" id="world-grid">
       <div class="world-card"><img src="world-1.jpg" alt="Northern Star artwork" /></div>
       <div class="world-card"><img src="world-2.jpg" alt="Northern Star artwork" /></div>
       <div class="world-card"><img src="world-3.jpg" alt="Northern Star artwork" /></div>
@@ -490,20 +494,23 @@ It will take everything she has to protect her family, her friends, and find som
       <div class="world-card"><img src="world-7.jpg" alt="Northern Star artwork" /></div>
       <div class="world-card"><img src="world-8.jpg" alt="Northern Star artwork" /></div>
       <div class="world-card"><img src="world-9.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-10.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-11.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-12.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-13.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-14.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-15.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-16.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-17.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-18.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-19.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-20.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-21.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-22.jpg" alt="Northern Star artwork" /></div>
-      <div class="world-card"><img src="world-23.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-10.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-11.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-12.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-13.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-14.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-15.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-16.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-17.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-18.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-19.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-20.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-21.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-22.jpg" alt="Northern Star artwork" /></div>
+      <div class="world-card world-hidden"><img src="world-23.jpg" alt="Northern Star artwork" /></div>
+    </div>
+    <div style="text-align:center; margin-top:1.2rem;">
+      <button class="btn" id="world-show-more">Show All 23 ›</button>
     </div>
   </section>
 
@@ -588,6 +595,14 @@ It will take everything she has to protect her family, her friends, and find som
   });
 
   renderReview(currentReview);
+
+  // World gallery show more
+  document.getElementById('world-show-more').addEventListener('click', function() {
+    document.querySelectorAll('.world-hidden').forEach(function(el) {
+      el.style.display = '';
+    });
+    this.style.display = 'none';
+  });
 </script>
 </body>
 </html>
