@@ -599,7 +599,7 @@ It will take everything she has to protect her family, her friends, and find som
   // World gallery show more
   document.getElementById('world-show-more').addEventListener('click', function() {
     document.querySelectorAll('.world-hidden').forEach(function(el) {
-      el.style.display = '';
+      el.classList.remove('world-hidden');
     });
     this.style.display = 'none';
   });
