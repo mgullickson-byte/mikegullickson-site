@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mike Gullickson | Science Fiction Author</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Science fiction from Mike Gullickson, author of The Northern Star trilogy and The Seethe." />
+  <style>
+    :root {
+      --bg: #050609;
+      --fg: #f5f5f7;
+      --muted: #a3a3b7;
+      --accent: #ff9b42;
+      --accent-soft: rgba(255, 155, 66, 0.18);
+      --border: #2b2e42;
+      --card-bg: #101321;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151515 0, #050505 50%, #000 100%);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 3.5rem;
+    }
+
+    /* HERO */
+
+    header {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+
+    .hero-image {
+      margin-top: 1.8rem;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 26px 48px rgba(0, 0, 0, 0.75);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.85rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 1rem 0 0.4rem;
+      font-size: clamp(2.3rem, 4.5vw, 3rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-line {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subline {
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    /* SECTION BASE */
+
+    section {
+      margin-top: 2.75rem;
+    }
+
+    h2 {
+      font-size: 1.02rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.55rem;
+      color: #e3e3f7;
+    }
+
+    .section-sub {
+      margin-bottom: 1.4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 640px;
+    }
+
+    /* BOOKS VERTICAL */
+
+    .book-row {
+      display: flex;
+      gap: 1.4rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .book-cover {
+      flex: 0 0 140px;
+      max-width: 140px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: #1a1d2a;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+    }
+
+    .book-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .book-body {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: 0.8rem;
+      padding: 1.2rem 1.3rem;
+      border: 1px solid var(--border);
+    }
+
+    .book-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .book-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .book-meta {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .book-copy {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .pill {
+      font-size: 0.76rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 18, 30, 0.9);
+      color: var(--muted);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.44rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #070707;
+      border-color: var(--accent);
+    }
+
+    .btn span {
+      margin-left: 0.28rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 720px) {
+      .book-row {
+        flex-direction: column;
+      }
+      .book-cover {
+        max-width: 200px;
+      }
+    }
+
+    /* REVIEWS CAROUSEL */
+
+    .review-box {
+      background: var(--card-bg);
+      border-radius: 0.9rem;
+      padding: 1.4rem 1.5rem 1.1rem;
+      border: 1px solid var(--border);
+      min-height: 150px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-text {
+      font-size: 0.94rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .review-source {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .review-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .review-buttons {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .review-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(10, 12, 20, 0.8);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .review-dots {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #3a3d52;
+    }
+
+    .dot.active {
+      background: var(--accent);
+    }
+
+    /* WORLD / ABOUT */
+
+    .world-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .world-card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .world-card strong { color: #e9e9f5; }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 640px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2.7rem;
+      padding-top: 1.1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="tag">Science Fiction</div>
+    <h1>Mike Gullickson</h1>
+    <p class="hero-line">
+      Military sci‑fi and near‑future stories about soldiers, cities, and the people caught between them.
+    </p>
+    <p class="hero-subline">
+      Author of <em>The Northern Star</em> trilogy (military sci‑fi) and the standalone novel <em>The Seethe</em>.
+    </p>
+    <div class="hero-image">
+      <img src="hero-fire.jpg" alt="A figure engulfed in flames amid wreckage" />
+    </div>
+  </header>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <h2>Books</h2>
+    <p class="section-sub">
+      Four entries into the world: the full Northern Star trilogy and the stand‑alone novel <em>The Seethe</em>.
+    </p>
+
+    <!-- Beginning -->
+    <div class="book-row">
+      <div class="book-cover">
+        <img src="northern-star-beginning.jpg" alt="The Northern Star: The Beginning cover" />
+      </div>
+      <div class="book-body">
+        <div class="book-label">Military Sci‑Fi • Book One</div>
+        <div class="book-meta">The Northern Star: The Beginning (Book 1)</div>
+        <p class="book-copy" style="white-space:pre-line;">
+The oil is gone.
+That way of life, ended.
+An invention frees the mind.
+A cyber-world becomes salvation.
+A boy, a weapon.
+A soldier, a titan.
+While nations thrash into antiquity,
+And a CEO becomes Queen,
+A man, brilliant and cunning,
+Plots to rule it all.
+        </p>
+        <div class="pill-list">
+          <span class="pill">Military sci‑fi</span>
+          <span class="pill">Near‑future</span>
+          <span class="pill">Book 1 of 3</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">
+            Read Book One<span>›</span>
+          </a>
+          <a class="btn" href="#" target="_blank" rel="noopener">
+            Get the full omnibus<span>›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Civil War -->
+    <div class="book-row">
+      <div class="book-cover">
+        <img src="northern-star-civil-war.jpg" alt="The Northern Star: Civil War cover" />
+      </div>
+      <div class="book-body">
+        <div class="book-label">Military Sci‑Fi • Book Two</div>
+        <div class="book-meta">The Northern Star: Civil War (Book 2)</div>
+        <p class="book-copy" style="white-space:pre-line;">
+The giant is ill.
+His daughter in peril.
+Her bastion a psycho.
+The worlds torn asunder.
+War is fueled by want,
+subversion by greed.
+What value is Free Will,
+if you can be reborn as a god?
+        </p>
+        <div class="pill-list">
+          <span class="pill">Escalating conflict</span>
+          <span class="pill">Global stakes</span>
+          <span class="pill">Book 2 of 3</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">
+            Read Book Two<span>›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The End -->
+    <div class="book-row">
+      <div class="book-cover">
+        <img src="northern-star-the-end.jpg" alt="The Northern Star: The End cover" />
+      </div>
+      <div class="book-body">
+        <div class="book-label">Military Sci‑Fi • Book Three</div>
+        <div class="book-meta">The Northern Star: The End (Book 3)</div>
+        <p class="book-copy" style="white-space:pre-line;">
+The ancient giant hopes to die.
+His existence festers like a plague.
+The love he's lost,
+and the debts he's paid.
+The death he's dealt,
+and the waste he's laid.
+But one last chance to right one wrong.
+One last march into the fray.
+Together, they can kill the god.
+And set his daughter free.
+        </p>
+        <div class="pill-list">
+          <span class="pill">Trilogy finale</span>
+          <span class="pill">High cost</span>
+          <span class="pill">Book 3 of 3</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">
+            Read Book Three<span>›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Seethe -->
+    <div class="book-row">
+      <div class="book-cover">
+        <img src="the-seethe.jpg" alt="The Seethe cover" />
+      </div>
+      <div class="book-body">
+        <div class="book-label">Sci‑Fi • Standalone</div>
+        <div class="book-title">The Seethe</div>
+        <div class="book-meta">Standalone novel</div>
+        <p class="book-copy">
+          In the vast forests of the Pacific Northwest, amidst the hard‑living community of loggers and miners,
+          Kacey Edwards strives to break the cycle of her family’s dreamless life. But when a mysterious event
+          causes mass death in the Pacific Ocean &mdash; and the following day wipes out cities &mdash; she learns
+          along with the rest of the world that what has happened is only the beginning. It will take all of her
+          intelligence and cunning to protect her family, her friends, and find some way &mdash; against all odds &mdash;
+          to survive.
+        </p>
+        <div class="pill-list">
+          <span class="pill">Science fiction</span>
+          <span class="pill">Near‑future</span>
+          <span class="pill">Character‑driven</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">
+            Read The Seethe<span>›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <h2>What readers say</h2>
+    <p class="section-sub">
+      A few highlights. Swap these out with the quotes you like best.
+    </p>
+
+    <div class="review-box">
+      <div id="review-text" class="review-text"></div>
+      <div id="review-source" class="review-source"></div>
+      <div class="review-nav">
+        <div class="review-buttons">
+          <button class="review-btn" id="prev-btn" aria-label="Previous review">‹</button>
+          <button class="review-btn" id="next-btn" aria-label="Next review">›</button>
+        </div>
+        <div class="review-dots">
+          <div class="dot" data-index="0"></div>
+          <div class="dot" data-index="1"></div>
+          <div class="dot" data-index="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLD / ART -->
+  <section id="world">
+    <h2>The World</h2>
+    <p class="section-sub">
+      A few panels from the same universe: caves, alleys, fire, and the people caught between.
+    </p>
+
+    <div class="world-grid">
+      <div class="world-card">
+        <img src="world-1.jpg" alt="An older woman in a cave watching a wooden door and a small shrine" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
+        <div>A quiet room, a door barred against the world, and someone praying it holds.</div>
+      </div>
+      <div class="world-card">
+        <img src="world-2.jpg" alt="A figure kneeling in a burning street surrounded by wreckage" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
+        <div>Fire in the street, wreckage all around, one person left in the middle of it.</div>
+      </div>
+      <div class="world-card">
+        <img src="world-3.jpg" alt="A wounded figure being wrapped in bandages by older men" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
+        <div>Improvised medicine and old hands trying to keep someone alive a little longer.</div>
+      </div>
+      <div class="world-card">
+        <img src="world-4.jpg" alt="A man carrying a child through filthy water toward a ruined doorway" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
+        <div>Flooded streets, ruined buildings, and a family trying to get back inside.</div>
+      </div>
+      <div class="world-card">
+        <img src="world-5.jpg" alt="A lone figure walking through a ruined urban landscape" style="width:100%;border-radius:0.5rem;margin-bottom:0.5rem;" />
+        <div>War isn’t just the front line; it’s what the city looks like after.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (MINIMAL) -->
+  <section id="about">
+    <h2>About the Author</h2>
+    <p class="about-text">
+      Mike Gullickson's debut novel, the cyberpunk bestseller <em>The Northern Star: The Beginning</em>,
+      was hailed by <em>Examiner</em> in 2013 as one of “The Top 5 Indie Published Books You Haven't Read But Should.”
+      For its sequel, <em>Midwest Book Review</em> stated “&hellip;it's military sci-fi and futuristic cyber-reality at its best.”
+      And in reviewing the final novel, <em>The New Podler Review of Books</em> stated that “the whole series is a science fiction masterpiece.”
+    </p>
+    <p class="about-text">
+      Mike has been interviewed as a bionics expert on <em>Lieberman Live!</em> (SiriusXM Howard 101) and featured on
+      <em>Netheads</em> (a Kevin Smith SModcast).
+    </p>
+    <p class="about-text">
+      The Northern Star trilogy is currently being shopped by Solipsist Film (<em>Sin City: A Dame to Kill For</em>,
+      <em>Metro 2033</em>, <em>Instinct</em>) to be made into a major motion picture. His new novel, <em>The Seethe</em>, is out now.
+    </p>
+    <p class="about-text">
+      Mike lives in Manhattan Beach, California with his wife and two children.
+    </p>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Mike Gullickson</span>
+    <span>
+      More books: <a href="https://www.amazon.com/s?k=Mike+Gullickson" target="_blank" rel="noopener">Amazon</a>
+    </span>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reviews = [
+    {
+      text: '“I read the book in three days but kept putting writing a review aside because nothing I wrote seemed to do justice to Gullickson\'s story… the whole series is a science fiction masterpiece.”',
+      source: '— The New Podler Review of Books'
+    },
+    {
+      text: '“A truly disturbing book that also somehow manages to be hard to put down… with good characters, and so much suspense, both plot‑suspense and moral suspense, that it reveals itself as something far more cerebral than any giant‑fighting‑robots story generally ever is.”',
+      source: '— IndieReader'
+    },
+    {
+      text: '“[The Northern Star: The End] is harsh, critical and doesn\'t pull any punches… a great way to end a fantastic trilogy.”',
+      source: '— Bartleby\'s Book Reviews'
+    }
+  ];
+
+  let currentReview = 0;
+  const textEl = document.getElementById('review-text');
+  const sourceEl = document.getElementById('review-source');
+  const dots = Array.from(document.querySelectorAll('.dot'));
+
+  function renderReview(index) {
+    const r = reviews[index];
+    textEl.textContent = r.text;
+    sourceEl.textContent = r.source;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    renderReview(currentReview);
+  });
+
+  document.getElementById('next-btn').addEventListener('click', () => {
+    currentReview = (currentReview + 1) % reviews.length;
+    renderReview(currentReview);
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const i = parseInt(dot.getAttribute('data-index'), 10);
+      currentReview = i;
+      renderReview(currentReview);
+    });
+  });
+
+  renderReview(currentReview);
+</script>
+</body>
+</html>
