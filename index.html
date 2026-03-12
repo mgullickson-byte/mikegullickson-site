@@ -107,16 +107,14 @@
     /* HERO */
 
     header {
-      text-align: left;
-      margin-bottom: 3rem;
+      position: relative;
+      margin-bottom: 2.5rem;
     }
 
     .hero-image {
-      margin-top: 1.8rem;
-      border-radius: 0.9rem;
+      position: relative;
       overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 26px 48px rgba(0, 0, 0, 0.75);
+      border-radius: 1rem;
     }
 
     .hero-image img {
@@ -125,38 +123,57 @@
       height: auto;
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.85rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4rem 1.8rem 1.6rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
     }
 
     h1 {
-      margin: 1rem 0 0.4rem;
-      font-size: clamp(2.3rem, 4.5vw, 3rem);
+      margin: 0 0 0.25rem;
+      font-size: clamp(1.8rem, 5vw, 3rem);
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      line-height: 1.1;
     }
 
     .hero-line {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: var(--fg);
-      max-width: 640px;
-      margin: 0.4rem 0 0.6rem;
-      font-weight: 500;
+      font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+      font-weight: 400;
       letter-spacing: 0.02em;
     }
 
     .hero-line em {
       color: var(--accent);
       font-style: normal;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1.5rem;
+      }
+      .hero-image {
+        border-radius: 0;
+      }
+      .hero-overlay {
+        padding: 3rem 1.4rem 1.4rem;
+      }
+      section, #the-seethe, #world, #about, footer {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
+      .review-box {
+        border-radius: 0;
+        margin-left: -1.4rem;
+        margin-right: -1.4rem;
+      }
     }
 
     /* SECTION BASE */
@@ -442,10 +459,12 @@
 <body>
 <div class="page">
   <header>
-    <h1>Mike Gullickson</h1>
-    <p class="hero-line">Author of <em>The Northern Star</em> Trilogy &amp; <em>The Seethe</em></p>
     <div class="hero-image">
       <img src="hero-fire.jpg" alt="A figure engulfed in flames amid wreckage" />
+      <div class="hero-overlay">
+        <h1>Mike Gullickson</h1>
+        <p class="hero-line">Author of <em>The Northern Star</em> Trilogy &amp; <em>The Seethe</em></p>
+      </div>
     </div>
 
     <!-- REVIEWS - right under the hero -->
