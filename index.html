@@ -289,10 +289,27 @@
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
-      min-height: 220px;
+      height: 320px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    .review-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--fg);
+      font-style: italic;
+      overflow-y: auto;
+      flex: 1;
+      margin-bottom: 0.5rem;
+      scrollbar-width: none;
+    }
+
+    .review-text::-webkit-scrollbar { display: none; }
+
+    @media (max-width: 640px) {
+      .review-box { height: 400px; }
     }
 
     .review-box::before {
@@ -308,13 +325,7 @@
       pointer-events: none;
     }
 
-    .review-text {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      color: var(--fg);
-      font-style: italic;
-    }
+
 
     .review-source {
       font-size: 0.85rem;
