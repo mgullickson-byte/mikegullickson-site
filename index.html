@@ -145,14 +145,19 @@
       },
       {
         "@type": "Book",
-        "name": "Abdul Haq",
+        "name": "Abdul Haq: The Servant of Power",
         "author": { "@id": "https://mikegullickson.com/#author" },
         "illustrator": { "@type": "Person", "name": "Eric Tilton" },
         "isPartOf": [
           { "@id": "https://mikegullickson.com/#the-end" },
           { "@id": "https://mikegullickson.com/#northern-star" }
         ],
-        "url": "https://www.amazon.com/stores/author/B00BDSU698",
+        "url": "https://www.amazon.com/dp/B014GS0QFA",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "ASIN",
+          "value": "B014GS0QFA"
+        },
         "image": "https://mikegullickson.com/images/abdul-haq.webp",
         "bookFormat": "https://schema.org/EBook",
         "inLanguage": "en",
@@ -454,6 +459,10 @@
       align-items: center;
       justify-content: center;
     }
+    .cover > a {
+      display: block;
+      width: 100%;
+    }
     .cover img {
       width: 100%;
       height: 100%;
@@ -712,13 +721,15 @@
           <article class="book">
             <div class="cover">
               <!-- 3:4 cover, letterboxed in the 5:8 frame used by the other books. -->
-              <img class="letterbox" src="images/abdul-haq.webp" width="800" height="1067" alt="Cover of Abdul Haq, Part I of The Northern Star: The End, illustrated by Eric Tilton" loading="lazy" decoding="async">
+              <a href="https://www.amazon.com/dp/B014GS0QFA" target="_blank" rel="noopener noreferrer">
+                <img class="letterbox" src="images/abdul-haq.webp" width="800" height="1067" alt="Cover of Abdul Haq: The Servant of Power" loading="lazy" decoding="async">
+                <span class="sr-only">(opens in a new tab)</span>
+              </a>
             </div>
             <div class="book-body">
-              <h3>Abdul Haq</h3>
+              <h3>Abdul Haq: The Servant of Power</h3>
               <p class="hook">Part I of The Northern Star: The End, with illustrations by Eric Tilton.</p>
-              <!-- TODO: Replace the author-store href with the real Amazon URL for Abdul Haq when Mike sends it. -->
-              <a class="btn" href="https://www.amazon.com/stores/author/B00BDSU698" target="_blank" rel="noopener noreferrer">Available on Amazon<span class="sr-only">: Abdul Haq (opens in a new tab)</span></a>
+              <a class="btn" href="https://www.amazon.com/dp/B014GS0QFA" target="_blank" rel="noopener noreferrer">Available on Amazon<span class="sr-only">: Abdul Haq: The Servant of Power (opens in a new tab)</span></a>
             </div>
           </article>
 
