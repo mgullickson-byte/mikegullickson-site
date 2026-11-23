@@ -349,14 +349,6 @@
       align-items: center;
       padding: 2.75rem 0 3.5rem;
     }
-    .eyebrow {
-      margin: 0 0 0.85rem;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
     h1 {
       margin: 0;
       font-family: var(--serif);
@@ -422,15 +414,20 @@
 
     .catalog {
       display: grid;
-      gap: 3rem 1.5rem;
+      gap: 2.75rem 1.5rem;
     }
-    .series {
-      display: grid;
-      gap: 0.65rem;
+    .series-label {
+      margin: 0 0 -1.5rem;
+      align-self: end;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      line-height: 1.4;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .series + .book { margin-top: 0.25rem; }
-    h3 { margin: 0; font-size: clamp(1.45rem, 3vw, 1.85rem); }
-    .series p { margin: 0; max-width: 40rem; color: var(--muted); }
+    #the-seethe { margin-top: 1.25rem; }
 
     @media (min-width: 720px) {
       .catalog { grid-template-columns: 1fr 1fr; }
@@ -483,7 +480,7 @@
       line-height: 1.45;
       text-transform: uppercase;
     }
-    h4 { margin: 0; font-size: 1.55rem; }
+    .book h3 { margin: 0; font-size: 1.55rem; }
     .hook, .dek, .fans, .store-note { margin: 0; }
     .hook { font-size: 1.02rem; line-height: 1.5; }
     .dek, .fans, .store-note { color: var(--muted); font-size: 0.98rem; line-height: 1.55; text-wrap: pretty; }
@@ -615,7 +612,6 @@
   <main id="main">
     <section class="hero wrap" id="top" aria-labelledby="hero-heading">
       <div>
-        <p class="eyebrow">Military science fiction</p>
         <h1 id="hero-heading">Mike Gullickson</h1>
         <p class="tagline">Near-future science fiction about technology, power, and the people caught in between.</p>
         <div class="hero-actions">
@@ -628,14 +624,10 @@
       </figure>
     </section>
 
-    <section class="block" id="books" aria-labelledby="books-heading">
+    <section class="block" id="books" aria-label="Books">
       <div class="wrap">
-        <h2 id="books-heading">Books</h2>
         <div class="catalog">
-          <header class="series span">
-            <h3>The Northern Star</h3>
-            <p>A trilogy about Mindlink, a direct connection from brain to network, and the corporation that holds it. Abdul Haq is Part I of <em>The End</em>, published on its own.</p>
-          </header>
+          <h2 class="series-label span">The Northern Star</h2>
 
           <article class="book">
             <div class="cover">
@@ -643,7 +635,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Book One</p>
-              <h4>The Beginning</h4>
+              <h3>The Beginning</h3>
               <p class="hook">The oil is gone. Civilization lives inside a network. One soldier is about to give up his body to defend it.</p>
               <p class="dek">In 2058, Mindlink lets humanity live and work in cyberspace, and the corporation that built it holds civilization by the mind. John Raimey agrees to become the first Tank Major, a bionic soldier sent after a hacker who can kill without leaving the network.</p>
               <p class="fans">For fans of Daniel Suarez’s <em>Daemon</em> and Richard K. Morgan’s <em>Altered Carbon</em>.</p>
@@ -657,7 +649,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Book Two</p>
-              <h4>Civil War</h4>
+              <h3>Civil War</h3>
               <p class="hook">He gave up his body for his family. A decade later, the only thing left to save is his daughter.</p>
               <p class="dek">Ten years on, the world Mindlink built is cracking, and Raimey — the first Tank Major — is coming apart with it.</p>
               <figure class="quote">
@@ -677,7 +669,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Book Three</p>
-              <h4>The End</h4>
+              <h3>The End</h3>
               <p class="hook">One last mission. Kill the man who made himself a god — and set his daughter free.</p>
               <p class="dek">Thirty-five years after he became the first bionic soldier, Raimey marches on the man who bound civilization’s mind to his will.</p>
               <figure class="quote">
@@ -697,7 +689,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Omnibus</p>
-              <h4>The Complete Trilogy</h4>
+              <h3>The Complete Trilogy</h3>
               <p class="hook">Three novels. One war for the human mind.</p>
               <p class="dek">In 2058 the oil runs out, and civilization continues inside Mindlink. This edition collects <em>The Beginning</em>, <em>Civil War</em>, and <em>The End</em>.</p>
               <figure class="quote">
@@ -718,7 +710,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Part I of The End, a standalone story</p>
-              <h4>Abdul Haq</h4>
+              <h3>Abdul Haq</h3>
               <p class="hook">Part I of <em>The Northern Star: The End</em>, published separately because it stands on its own as a story. Illustrated by Eric Tilton.</p>
               <p class="store-note">On the author store until the book has its own Amazon page.</p>
               <!-- TODO: Replace the author-store href with the Abdul Haq ASIN link
@@ -727,10 +719,7 @@
             </div>
           </article>
 
-          <header class="series span" id="the-seethe">
-            <h3>The Seethe</h3>
-            <p>A post-apocalyptic novel about the night black hail fell, and its companion novella.</p>
-          </header>
+          <h2 class="series-label span" id="the-seethe">The Seethe</h2>
 
           <article class="book">
             <div class="cover">
@@ -738,7 +727,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Novel</p>
-              <h4>The Seethe</h4>
+              <h3>The Seethe</h3>
               <p class="hook">The ocean died in a night. Then the black hail came — and something started growing from what it left behind.</p>
               <p class="dek">Kacey Edwards wants out of Kettle Falls, Washington. Then the Pacific dies overnight, and black hail begins to fall.</p>
               <figure class="quote">
@@ -758,7 +747,7 @@
             </div>
             <div class="book-body">
               <p class="kicker">Companion novella</p>
-              <h4>Kirksville</h4>
+              <h3>Kirksville</h3>
               <p class="hook">The companion novella to <em>The Seethe</em>.</p>
               <a class="btn" href="https://www.amazon.com/dp/B0HS95WKSZ" target="_blank" rel="noopener noreferrer">Available on Amazon<span class="sr-only">: The Seethe: Kirksville (opens in a new tab)</span></a>
             </div>
