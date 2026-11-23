@@ -103,6 +103,7 @@
       },
       {
         "@type": "Book",
+        "@id": "https://mikegullickson.com/#the-end",
         "name": "The Northern Star: The End",
         "author": { "@id": "https://mikegullickson.com/#author" },
         "isPartOf": { "@id": "https://mikegullickson.com/#northern-star" },
@@ -142,13 +143,16 @@
         "name": "Abdul Haq",
         "author": { "@id": "https://mikegullickson.com/#author" },
         "illustrator": { "@type": "Person", "name": "Eric Tilton" },
-        "isPartOf": { "@id": "https://mikegullickson.com/#northern-star" },
+        "isPartOf": [
+          { "@id": "https://mikegullickson.com/#the-end" },
+          { "@id": "https://mikegullickson.com/#northern-star" }
+        ],
         "url": "https://www.amazon.com/stores/author/B00BDSU698",
         "image": "https://mikegullickson.com/images/abdul-haq.webp",
         "bookFormat": "https://schema.org/EBook",
         "inLanguage": "en",
         "genre": ["Military science fiction", "Cyberpunk"],
-        "description": "A prequel novella to the Northern Star trilogy, illustrated by Eric Tilton."
+        "description": "Part I of The Northern Star: The End, published separately because it stands on its own as a story. Illustrated by Eric Tilton."
       },
       {
         "@type": "Book",
@@ -475,7 +479,8 @@
       color: var(--accent);
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
+      line-height: 1.45;
       text-transform: uppercase;
     }
     h4 { margin: 0; font-size: 1.55rem; }
@@ -629,7 +634,7 @@
         <div class="catalog">
           <header class="series span">
             <h3>The Northern Star</h3>
-            <p>A trilogy about Mindlink, a direct connection from brain to network, and the corporation that holds it — plus a prequel novella.</p>
+            <p>A trilogy about Mindlink, a direct connection from brain to network, and the corporation that holds it. Abdul Haq is Part I of <em>The End</em>, published on its own.</p>
           </header>
 
           <article class="book">
@@ -709,15 +714,15 @@
           <article class="book">
             <div class="cover">
               <!-- 3:4 cover, letterboxed in the 5:8 frame used by the other books. -->
-              <img class="letterbox" src="images/abdul-haq.webp" width="800" height="1067" alt="Cover of Abdul Haq, illustrated by Eric Tilton" loading="lazy" decoding="async">
+              <img class="letterbox" src="images/abdul-haq.webp" width="800" height="1067" alt="Cover of Abdul Haq, Part I of The Northern Star: The End, illustrated by Eric Tilton" loading="lazy" decoding="async">
             </div>
             <div class="book-body">
-              <p class="kicker">Prequel novella</p>
+              <p class="kicker">Part I of The End, a standalone story</p>
               <h4>Abdul Haq</h4>
-              <p class="hook">A prequel novella to the Northern Star trilogy, illustrated by Eric Tilton.</p>
+              <p class="hook">Part I of <em>The Northern Star: The End</em>, published separately because it stands on its own as a story. Illustrated by Eric Tilton.</p>
               <p class="store-note">On the author store until the book has its own Amazon page.</p>
               <!-- TODO: Replace the author-store href with the Abdul Haq ASIN link
-                   (https://www.amazon.com/dp/ASIN) once the novella is listed on Amazon. -->
+                   (https://www.amazon.com/dp/ASIN) once it is listed on Amazon. -->
               <a class="btn" href="https://www.amazon.com/stores/author/B00BDSU698" target="_blank" rel="noopener noreferrer">Available on Amazon<span class="sr-only">: Abdul Haq, on the author store until its own page is up (opens in a new tab)</span></a>
             </div>
           </article>
@@ -794,7 +799,7 @@
       <div class="wrap">
         <h2 id="about-heading">About</h2>
         <p>Mike Gullickson writes near-future science fiction about technology, power, and the people caught in between.</p>
-        <p>His <em>Northern Star</em> trilogy imagines a world where the internet has been replaced by a direct brain-to-network connection, and one corporation controls the mind of civilization. The Midwest Book Review called it "military sci-fi and futuristic cyber-reality at its best," and The New Podler Review of Books called the series "a science fiction masterpiece." The trilogy was later optioned. The prequel novella, <em>Abdul Haq</em>, is illustrated by Eric Tilton.</p>
+        <p>His <em>Northern Star</em> trilogy imagines a world where the internet has been replaced by a direct brain-to-network connection, and one corporation controls the mind of civilization. The Midwest Book Review called it "military sci-fi and futuristic cyber-reality at its best," and The New Podler Review of Books called the series "a science fiction masterpiece." The trilogy was later optioned. <em>Abdul Haq</em>, the opening story of <em>The End</em>, is also published on its own with illustrations by Eric Tilton.</p>
         <p>He's also the author of <em>The Seethe</em>, a post-apocalyptic thriller about the night black hail fell from the sky, which the Portland Book Review called "unique and captivating... gritty and horrifying." Its companion novella is <em>The Seethe: Kirksville</em>.</p>
         <p>Mike lives in Manhattan Beach, California, with his wife and kids.</p>
       </div>
